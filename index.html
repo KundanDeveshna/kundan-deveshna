@@ -20,11 +20,12 @@ body {
 }
 
 .container {
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.45);
     padding: 40px;
     border-radius: 20px;
     backdrop-filter: blur(8px);
     animation: fadeIn 2s ease-in-out;
+    max-width: 600px;
 }
 
 h1 {
@@ -32,7 +33,8 @@ h1 {
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 button {
@@ -65,18 +67,19 @@ button {
 
 <body>
 
-<!-- Background Music -->
-<audio autoplay loop>
-    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
-</audio>
-
 <div class="container">
     <h1>Deveshna ❤️</h1>
 
     <p>
-        Tum meri filmy kahani ki heroine ho... 🎬<br><br>
-        Jab se tum mili ho,<br>
-        background mein romantic music bajna shuru ho gaya hai... 🎶<br><br>
+        Tum meri filmy kahani ki heroine ho 🎬<br><br>
+
+        Jab tum online aati ho,<br>
+        mera WiFi bhi fast ho jaata hai...<br>
+        Shayad connection strong ho raha hai 😌📶<br><br>
+
+        Jab tum hasta ho,<br>
+        background mein automatically Arijit Singh gaa deta hai 🎶<br><br>
+
         Deveshna... kya tum meri Valentine banogi? 🌹
     </p>
 
@@ -88,12 +91,22 @@ button {
 function sayYes() {
 
     document.body.innerHTML = `
-        <div style="text-align:center; color:white; padding-top:100px;">
-            <h1 style="font-size:50px;">Yeh Ishq Haiiiii ❤️😍</h1>
-            <p style="font-size:25px;">
-                Tumne Haan bol di...<br><br>
-                Ab meri life ek perfect Bollywood love story ban gayi 🎬✨<br><br>
-                Thank you Deveshna ❤️
+        <div style="text-align:center; color:white; padding-top:80px;">
+            <h1 style="font-size:50px;">Picture Abhi Baaki Hai... 🎬❤️</h1>
+
+            <p style="font-size:24px;">
+                Tumne Haan bol di 😍<br><br>
+                Ab entry hoti hai hero ki...<br>
+                Slow motion... hawa chal rahi hai...<br>
+                Background mein violins baj rahe hain 🎻
+            </p>
+
+            <h2 style="font-size:40px; margin-top:40px;">
+                ⭐ HERO = KUNDAN ⭐
+            </h2>
+
+            <p style="font-size:22px;">
+                (Jo tumhe bahut pasand karta hai 😌)
             </p>
         </div>
     `;
@@ -108,7 +121,7 @@ function moveNo() {
     btn.style.left = Math.random() * window.innerWidth + "px";
 }
 
-/* Floating Hearts Animation */
+/* Floating Hearts */
 function startHearts() {
     setInterval(() => {
         let heart = document.createElement("div");
@@ -124,7 +137,6 @@ function startHearts() {
         setTimeout(() => heart.remove(), 4000);
     }, 300);
 }
-
 </script>
 
 <style>
