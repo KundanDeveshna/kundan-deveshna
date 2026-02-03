@@ -3,72 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will You Be My Valentine?</title>
+<title>Deveshna ❤️</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(to right, #ff9a9e, #fad0c4);
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: white;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(45deg, #ff4e50, #f9d423);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
 
-    .container {
-        background: rgba(255, 255, 255, 0.2);
-        padding: 40px;
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
+.container {
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 2s ease-in-out;
+}
 
-    h1 {
-        font-size: 2.5rem;
-    }
+h1 {
+    font-size: 2.7rem;
+}
 
-    button {
-        padding: 12px 25px;
-        font-size: 18px;
-        margin: 10px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+p {
+    font-size: 1.3rem;
+}
 
-    #yesBtn {
-        background-color: #ff4d6d;
-        color: white;
-    }
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    margin: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    #noBtn {
-        background-color: #444;
-        color: white;
-        position: relative;
-    }
+#yesBtn {
+    background-color: #ff1e56;
+    color: white;
+}
+
+#noBtn {
+    background-color: black;
+    color: white;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Will You Be My Valentine? ❤️</h1>
-    <p>You make my days brighter and my smile bigger 😊</p>
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+</audio>
 
-    <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
-    <button id="noBtn" onmouseover="moveNo()">No 😢</button>
+<div class="container">
+    <h1>Deveshna ❤️</h1>
+
+    <p>
+        Tum meri filmy kahani ki heroine ho... 🎬<br><br>
+        Jab se tum mili ho,<br>
+        background mein romantic music bajna shuru ho gaya hai... 🎶<br><br>
+        Deveshna... kya tum meri Valentine banogi? 🌹
+    </p>
+
+    <button id="yesBtn" onclick="sayYes()">Haan ❤️</button>
+    <button id="noBtn" onmouseover="moveNo()">Nahi 🙈</button>
 </div>
 
 <script>
 function sayYes() {
+
     document.body.innerHTML = `
-        <h1 style="color:white;">Yayyyyy ❤️😍</h1>
-        <p style="font-size:24px;">You just made me the happiest person!!!</p>
+        <div style="text-align:center; color:white; padding-top:100px;">
+            <h1 style="font-size:50px;">Yeh Ishq Haiiiii ❤️😍</h1>
+            <p style="font-size:25px;">
+                Tumne Haan bol di...<br><br>
+                Ab meri life ek perfect Bollywood love story ban gayi 🎬✨<br><br>
+                Thank you Deveshna ❤️
+            </p>
+        </div>
     `;
+
+    startHearts();
 }
 
 function moveNo() {
@@ -77,7 +107,32 @@ function moveNo() {
     btn.style.top = Math.random() * window.innerHeight + "px";
     btn.style.left = Math.random() * window.innerWidth + "px";
 }
+
+/* Floating Hearts Animation */
+function startHearts() {
+    setInterval(() => {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "absolute";
+        heart.style.fontSize = "25px";
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "100%";
+        heart.style.animation = "float 4s linear";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+    }, 300);
+}
+
 </script>
+
+<style>
+@keyframes float {
+    from {transform: translateY(0);}
+    to {transform: translateY(-100vh);}
+}
+</style>
 
 </body>
 </html>
